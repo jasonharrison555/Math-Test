@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Math Feedback Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section id="startScreen" class="screen active">
+      <h1>Math Test Game</h1>
+      <p class="subtitle">
+        Choose a test. Each one has 30 randomly generated questions, so the problems are different every time.
+      </p>
+
+      <div class="test-grid">
+        <button class="test-card" data-age="10" data-tone="encouraging">
+          <strong>10-Year-Old Test A</strong>
+          
+        </button>
+
+        <button id="mean" class="test-card" data-age="10" data-tone="discouraging">
+          <strong>10-Year-Old Test B</strong>
+     
+        </button>
+
+        <button class="test-card" data-age="12" data-tone="encouraging">
+          <strong>12-Year-Old Test A</strong>
+   
+        </button>
+
+        <button id="mean" class="test-card" data-age="12" data-tone="discouraging">
+          <strong>12-Year-Old Test B</strong>
+    
+        </button>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="top-bar">
+        <div id="testName">Test</div>
+        <div id="questionCounter">Question 1 of 30</div>
+        <div id="liveScore">Score: 0/0</div>
+      </div>
+
+      <div class="question-box">
+        <div class="hidden-label">Solve this problem:</div>
+        <div id="questionText" class="question">8 × 7</div>
+      </div>
+
+      <form id="answerForm">
+        <input id="answerInput" type="text" autocomplete="off" placeholder="Type your answer" />
+        <button id="submitBtn" type="submit">Submit Answer</button>
+        <button id="nextBtn" type="button" style="display:none;">Next Question</button>
+      </form>
+
+      <div id="feedbackBox" class="feedback"></div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="results-card">
+        <h2>Test Complete</h2>
+        <p id="finalTestName"></p>
+        <div id="finalScore" class="score-big">0 out of 30</div>
+
+        <div class="results-details">
+          <div class="detail-box">
+            <span>Correct</span>
+            <strong id="correctCount">0</strong>
+          </div>
+          <div class="detail-box">
+            <span>Missed</span>
+            <strong id="missedCount">0</strong>
+          </div>
+          <div class="detail-box">
+            <span>Percent</span>
+            <strong id="percentScore">0%</strong>
+          </div>
+        </div>
+
+        <button id="playAgainBtn">Choose Another Test</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="prompts.js"></script>
+</body>
+</html>
